@@ -1,14 +1,27 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  Image,
+  TouchableOpacity,
+  SafeAreaView,
+} from "react-native";
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text>This is saurabh Parasarr</Text>
-      <Image />
-      <StatusBar style="auto" />
-    </View>
+      <TouchableOpacity onPress={() => console.log("image pressed")}>
+        <Image
+          source={{
+            width: 200,
+            height: 300,
+            uri: "https://picsum.photos/200/300",
+          }}
+        />
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 }
 
