@@ -1,26 +1,20 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  Image,
-  TouchableOpacity,
-  SafeAreaView,
-} from "react-native";
+import { StyleSheet, SafeAreaView, Button, Alert } from "react-native";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>This is saurabh Parasarr</Text>
-      <TouchableOpacity onPress={() => console.log("image pressed")}>
-        <Image
-          source={{
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/200/300",
-          }}
-        />
-      </TouchableOpacity>
+      <Button
+        color="orange"
+        title="Click ME"
+        onPress={() =>
+          Alert.alert("confirm!", "Do you Want to Delete this", [
+            { text: "yes", onPress: (text) => console.log("yes") },
+            { text: "No", onPress: (text) => console.log("No") },
+          ])
+        }
+      />
     </SafeAreaView>
   );
 }
